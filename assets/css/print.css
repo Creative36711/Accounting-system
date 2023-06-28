@@ -1,0 +1,31 @@
+@media print {
+    .title-margin-right, .title-margin-left, .col-md-3, .card-header, .col-lg-12, .header, .sidebar {
+        display:none;
+    }
+    .tableProduct {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .tableProduct th:nth-child(1), td:nth-child(1), th:nth-child(4), td:nth-child(4), th:nth-child(5), td:nth-child(5), th:nth-child(7), td:nth-child(7), th:nth-child(10), td:nth-child(10){
+        display: none;
+    }
+
+    .student-data-table {
+        table-layout: fixed!important;
+    }
+
+    .student-data-table tr {
+        page-break-inside: avoid;
+    }
+
+    .content-wrap {
+        margin: 0!important;
+    }
+}
+
+@page {
+    size: auto;  
+    margin: 0;  
+}
+
