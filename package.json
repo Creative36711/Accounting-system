@@ -1,0 +1,20 @@
+{
+  "name": "accounting-system",
+  "version": "1.0.0",
+  "description": "system",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Creative36711/Accounting-system.git"
+  },
+  "author": "Creative",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Creative36711/Accounting-system/issues"
+  },
+  "homepage": "https://github.com/Creative36711/Accounting-system#readme"
+}
