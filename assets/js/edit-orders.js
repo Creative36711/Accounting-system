@@ -30,6 +30,13 @@ let deadline = document.querySelector(".deadline2")
 let mainForm = document.querySelector("#mainForm")
 let accountType = document.querySelector(".accountType")
 
+// Автоматический процент дизайнера
+
+designer.onchange = function () {
+    if($('.designer2').val() === "Першукова О.П.") {
+        $(".designerPercentage2").val("0,00%")
+    }
+}
 
 // Показать новые предоплаты
 document.querySelector(".addPrepayment").onclick = function () {

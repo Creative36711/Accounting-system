@@ -150,6 +150,8 @@ else {
                 fullNameHeader.innerHTML = data[0][1] + "&nbsp;" + data[0][2] + "&nbsp;" + data[0][3]
                 phoneHeader.innerText = data[0][4]
                 dateHeader.innerText = data[0][5]
+                console.log(data[0])
+                $($('#receiptTable3 tbody td:nth-child(1)')).text(data[0][11])
                 $($('#receiptTable3 tbody td:nth-child(6)')).text(data[0][6])
                 deadlineReceipt.innerText = "Дата готовности " + data[0][7]
                 receiptTable4.innerHTML = "<tr><td>" + data[0][8] + " __________</td><td class='rightCol'>" + fullNameHeader.innerHTML + " __________</td></tr>"

@@ -46,61 +46,63 @@ $(rowBalance).click(function (event) {
 })
 
 $(function () {
-    var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-    "use strict";
+
 Morris.Area({
         element: 'morris-area-chart',
          data: [{
+            period: '2019-09',
+            revenue: 0,
+        },{
+            period: '2019-12',
+            revenue: 150000,
+        }, {
+            period: '2020-03',
+            revenue: 1026911,
+        }, {
+            period: '2020-06',
+            revenue: 1019609,
+        }, {
+            period: '2020-09',
+            revenue: 1864841,
+        }, {
+            period: '2020-12',
+            revenue: 2233936,
+        },{
+            period: '2021-03',
+            revenue: 1681066,
+        }, {
+            period: '2021-06',
+            revenue: 1310721,
+        }, {
+            period: '2021-09',
+            revenue: 1950670,
+        }, {
+            period: '2021-12',
+            revenue: 2118398,
+        },{
+            period: '2022-03',
+            revenue: 1422860,
+        }, {
             period: '2022-06',
-            revenue: 316042,
-        }, {
-            period: '2022-07',
-            revenue: 937824,
-        }, {
-            period: '2022-08',
-            revenue: 419789,
+            revenue: 2188936,
         }, {
             period: '2022-09',
-            revenue: 808895,
-        }, {
-            period: '2022-10',
-            revenue: 665973,
-        }, {
-            period: '2022-11',
-            revenue: 695760,
+            revenue: 2166508,
         }, {
             period: '2022-12',
-            revenue: 907628,
-        }, {
-            period: '2023-01',
-            revenue: 505432,
-        }, {
-            period: '2023-02',
-            revenue: 387797,
-        }, {
+            revenue: 2317307,
+        },{
             period: '2023-03',
-            revenue: 354917,
+            revenue: 1240646,
         }, {
-            period: '2023-04',
-            revenue: 382722,
-        }, {
-            period: '2023-05',
-            revenue: 846185,
+            period: '2023-06',
+            revenue: 1836071,
         }
-
 
         ],
         xkey: 'period',
         ykeys: ['revenue'],
         labels: ['Выручка'],
-        xLabelFormat: function(x) { // <--- x.getMonth() returns valid index
-            var month = months[x.getMonth()];
-            return month;
-          },
-          dateFormat: function(x) {
-            var month = months[new Date(x).getMonth()];
-            return month;
-          },
         pointSize: 3,
         fillOpacity: 1,
         pointStrokeColors:['#03A9F5'],
@@ -110,7 +112,8 @@ Morris.Area({
         hideHover: 'auto',
         lineColors: ['#03A9F5'],
         resize: true,
-        ymin: 300000,
-        ymax: 1100000
+        ymin: 0,
+        ymax: 2500000
     });
+
  });    

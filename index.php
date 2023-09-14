@@ -209,7 +209,6 @@ require "blocks/search.php"
 ?>
 
 
-
     <script src="assets/js/lib/jquery.min.js"></script>
     <!-- jquery vendor -->
     <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>

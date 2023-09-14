@@ -82,7 +82,7 @@ require "blocks/header.php";
                                 <div class="basic-form">
                                     <div class="form-group">
                                         <label>Номер заказа</label>
-                                        <input type="text" class="form-control border-none input-flat bg-ash orderNumber2" maxlength="11" autocomplete="off" tabindex="1" name="orderNumber2" required>
+                                        <input type="text" class="form-control border-none input-flat bg-ash orderNumber2" maxlength="11" minlength="11" autocomplete="off" tabindex="1" name="orderNumber2" required>
                                     </div>
                                 </div>
                             </div>

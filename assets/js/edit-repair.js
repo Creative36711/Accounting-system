@@ -24,6 +24,14 @@ let serviceName = document.querySelector(".serviceName")
 let serviceQuantity = document.querySelector(".serviceQuantity") 
 let seamstress = document.querySelector(".seamstress") 
 
+// Автоматический процент дизайнера
+
+designer.onchange = function () {
+    if($('.designer2').val() === "Першукова О.П.") {
+        $(".designerPercentage2").val("0,00%")
+    }
+}
+
 // Вывести даты сдачи, возврата и оплаты
 orderStatus.onchange = function () {
     if (orderStatus.value === "Сдан") {
@@ -221,7 +229,6 @@ if (numOrders.value !== "") {
             }
         });
 } else {
-    orderNumber.value = "Ремонт №0"
     orderDate.value = moment().format('DD-MM-YYYY');
     selectDesigner()
 }
@@ -266,7 +273,7 @@ function selectDesigner() {
 }
 
 const priceRepair = [
-[{name: 'брюки под строчку', price: 250}, {name: 'брюки с тесьмой', price: 350}, {name: 'брюки трикотажные', price: 250}, {name: 'джинсы под строчку', price: 250}, {name: 'джинсы с сохранением фабричного шва', price: 350}, {name: 'джинсы с тесьмой', price: 350}, {name: 'юбка прямая со шлицей', price: 350}, {name: 'юбка расклешённая', price: 400}, {name: 'пиджак со шлицей', price: 600}, {name: 'пиджак без шлицы', price: 500}, {name: 'пальто деми', price: 800}, {name: 'пальто зима', price: 900}, {name: 'трикотаж футболка', price: 250}, {name: 'трикотаж платье', price: 300}],
+[{name: 'брюки под строчку', price: 300}, {name: 'брюки с тесьмой', price: 350}, {name: 'брюки трикотажные', price: 250}, {name: 'джинсы под строчку', price: 250}, {name: 'джинсы с сохранением фабричного шва', price: 350}, {name: 'джинсы с тесьмой', price: 350}, {name: 'юбка прямая со шлицей', price: 350}, {name: 'юбка расклешённая', price: 400}, {name: 'пиджак со шлицей', price: 600}, {name: 'пиджак без шлицы', price: 500}, {name: 'пальто деми', price: 800}, {name: 'пальто зима', price: 900}, {name: 'трикотаж футболка', price: 250}, {name: 'трикотаж платье', price: 300}],
 [{name: 'блузка', price: 350}, {name: 'пиджак на подкладке женский', price: 700}, {name: 'пиджак на подкладке мужской', price: 900}, {name: 'пиджак без подкладки женский', price: 500}, {name: 'пиджак без подкладки мужской', price: 700}],
 [{name: 'пиджак без подкладки', price: 400}, {name: 'пиджак на подкладке', price: 500}, {name: 'пальто (деми)', price: 500}, {name: 'пальто (зима)', price: 550}, {name: 'без манжета, куртка (деми)', price: 400}, {name: 'с манжетом, куртка (деми)', price: 500}, {name: 'без манжета, куртка (зима)', price: 450}, {name: 'с манжетом, куртка (зима)', price: 550}, {name: 'прямой, блузка', price: 250}, {name: 'с манжетом, блузка', price: 350}, {name: 'прямой на трикотаже', price: 250}],
 [{name: 'юбку без пояса (бедра)', price: 300}, {name: 'юбку с поясом (боковые швы)', price: 500}, {name: 'юбку средний шов с поясом', price: 350}, {name: 'юбку джинсовую (с отстрочками)', price: 400}, {name: 'брюки без пояса (боковые швы)', price: 300}, {name: 'брюки без пояса (боковые швы + низ)', price: 400}, {name: 'брюки средний шов с поясом', price: 350}, {name: 'джинсы средний шов с поясом', price: 400}, {name: 'джинсы средний шов без пояса', price: 250}, {name: 'блузку', price: 250}, {name: 'пиджак по боковым швам', price: 500}, {name: 'пиджак по боковым швам и рельефам', price: 800}, {name: 'куртку (деми)', price: 600}, {name: 'куртку (зима) с утеплителем', price: 900}, {name: 'пальто по боковым швам', price: 800}, {name: 'пальто, один рельеф', price: 200}],
@@ -350,6 +357,12 @@ $(document).ready (function () {
         }
     });
 });
+
+if (numOrders.value === "") {
+    orderNumber.onclick = function () {
+        $(".orderNumber2").val("Ремонт №")
+    }
+}
 
 
 

@@ -1,60 +1,61 @@
 // Dashboard 1 Morris-chart
 $(function () {
-    var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-    "use strict";
 Morris.Area({
         element: 'morris-area-chart',
-         data: [{
-            period: '2022-06',
+        data: [{
+            period: '2019-09',
+            dividends: 0,
+        },{
+            period: '2019-12',
             dividends: 0,
         }, {
-            period: '2022-07',
-            dividends: 236664,
+            period: '2020-03',
+            dividends: 0,
         }, {
-            period: '2022-08',
-            dividends: 17925,
+            period: '2020-06',
+            dividends: 164828,
+        }, {
+            period: '2020-09',
+            dividends: 282134,
+        }, {
+            period: '2020-12',
+            dividends: 473412,
+        },{
+            period: '2021-03',
+            dividends: 90948,
+        }, {
+            period: '2021-06',
+            dividends: 0,
+        }, {
+            period: '2021-09',
+            dividends: 237652,
+        }, {
+            period: '2021-12',
+            dividends: 317624,
+        },{
+            period: '2022-03',
+            dividends: 90649,
+        }, {
+            period: '2022-06',
+            dividends: 401925,
         }, {
             period: '2022-09',
-            dividends: 189671,
-        }, {
-            period: '2022-10',
-            dividends: 135725,
-        }, {
-            period: '2022-11',
-            dividends: 154141,
+            dividends: 478007,
         }, {
             period: '2022-12',
-            dividends: 174491,
-        }, {
-            period: '2023-01',
-            dividends: 66191,
-        }, {
-            period: '2023-02',
-            dividends: 29329,
-        }, {
+            dividends: 464358,
+        },{
             period: '2023-03',
-            dividends: 0,
+            dividends: 31997,
         }, {
-            period: '2023-04',
-            dividends: 0,
-        }, {
-            period: '2023-05',
-            dividends: 118936,
+            period: '2023-06',
+            dividends: 277269,
         }
-
 
         ],
         xkey: 'period',
         ykeys: ['dividends'],
         labels: ['Дивиденды'],
-        xLabelFormat: function(x) { // <--- x.getMonth() returns valid index
-            var month = months[x.getMonth()];
-            return month;
-          },
-          dateFormat: function(x) {
-            var month = months[new Date(x).getMonth()];
-            return month;
-          },
         pointSize: 3,
         fillOpacity: 0,
         pointStrokeColors:['#55ce63'],
@@ -63,7 +64,24 @@ Morris.Area({
         lineWidth: 3,
         hideHover: 'auto',
         lineColors: ['#55ce63'],
-        resize: true
+        resize: true,
+        ymin: 0,
+        ymax: 500000
+
+        // xkey: 'period',
+        // ykeys: ['revenue'],
+        // labels: ['Выручка'],
+        // pointSize: 3,
+        // fillOpacity: 1,
+        // pointStrokeColors:['#03A9F5'],
+        // behaveLikeLine: true,
+        // gridLineColor: '#e0e0e0',
+        // lineWidth: 3,
+        // hideHover: 'auto',
+        // lineColors: ['#03A9F5'],
+        // resize: true,
+        // ymin: 0,
+        // ymax: 2500000
     });
  });    
 

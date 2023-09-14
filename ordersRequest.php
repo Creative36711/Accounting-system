@@ -539,7 +539,7 @@ if(isset($_POST['numberReceiptRepair'])) {
         $body,
         $params
     );
-    $range = "Квитанции!A5:K5";
+    $range = "Квитанции!A5:L5";
     $range2 = "Квитанции!AF1:AI";
     $range3 = "Квитанции!AK1:AR";
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
@@ -1578,8 +1578,8 @@ if (isset($_POST['selectAccount'])) {
     );
 
     if ($expenditure !== "Возврат денег клиенту" && $selectAccount === "Расчетный счет") {
-        $description = $_POST['description'] . " 2,5%";
-        $sum = $sum / 100 * 2.5;
+        $description = $_POST['description'] . " 1% Альфа-банк";
+        $sum = $sum / 100 * 1;
         $sum = str_replace('.',',',$sum);
         $sum = "-" . $sum;
         $type = "Расход";
@@ -1923,7 +1923,12 @@ if (isset($_POST['orderDateRepair'])) {
     $paymentDate = $_POST['paymentDate'];
     $orderTime = date("Y-m-d H:i:s");
     $serviceQuantity = $_POST['serviceQuantity'];
-    $percentageOfTailoring = $orderPrice / 2;
+    if($seamstress !== "Першукова О.П.") {
+        $percentageOfTailoring = $orderPrice / 2;
+    } else {
+        $percentageOfTailoring = 0;
+    }
+    
 
     // Добавить ремонт
     if (empty($_POST['numOrders'])) {

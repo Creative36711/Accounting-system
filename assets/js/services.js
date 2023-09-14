@@ -160,7 +160,10 @@ function transport() {
         serviceProviderInput.setAttribute("required", "required");
         percentageOfServiceInput.setAttribute("required", "required");
         $('#serviceProvider').removeClass("displayNone");
-        $('#percentageOfService').removeClass("displayNone");
+        $('#percentageOfService').removeClass("displayNone"); 
+        if($('#serviceProviderInput').val() === "Першукова О.П." || $('#serviceProviderInput').val() === "Исмаилов И.Н.") {
+            $('#percentageOfServiceInput').val("0,00%")
+        }
     }
 }
 
